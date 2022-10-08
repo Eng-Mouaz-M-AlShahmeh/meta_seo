@@ -1,7 +1,7 @@
 # Developed by Eng Mouaz M AlShahmeh
 name: meta_seo
 description: Developed by Eng Mouaz M AlShahmeh
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo
 environment:
   sdk: '>=2.18.2 <3.0.0'

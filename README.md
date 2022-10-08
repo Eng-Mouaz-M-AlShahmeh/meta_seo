@@ -4,35 +4,46 @@ Flutter package for Meta SEO.
 
 ## Screenshots
 
+<img width="1420" alt="Screen Shot 2022-10-08 at 12 01 33 PM" src="https://user-images.githubusercontent.com/86870601/194700597-d6e51757-60a8-451d-b359-2e211aad2929.png">
+
 
 ## About:
-- Meta SEO is package for adding meta data for html document in head tag 
+- Meta SEO is package for adding meta data for html document in head tag
   which meta tags or meta data make search engine optimization for web apps.
 
 ## Installation and Basic Usage
 
-First: Add the bellow MetaSEO JS functions
+First: Add the bellow MetaSEO JS functions into web/index.html
 
 ```
-function seoNameJS(name, content) {
-    var meta = document.createElement('meta');
-    meta.setAttribute('name', name);
-    meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
-}
+.....
+  <script>
+      window.addEventListener('load', function(ev) {
+      .....
 
-function seoPropertyJS(property, content) {
-    var meta = document.createElement('meta');
-    meta.setAttribute('property', property);
-    meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
-}
+  // add  MetaSEO JS functions here
+  function seoNameJS(name, content) {
+      var meta = document.createElement('meta');
+      meta.setAttribute('name', name);
+      meta.setAttribute('content', content);
+      document.getElementsByTagName('head')[0].appendChild(meta);
+  }
 
-function seoAttributeJS(key, val) {
-    var meta = document.createElement('meta');
-    meta.setAttribute(key, val);
-    document.getElementsByTagName('head')[0].appendChild(meta);
-}
+  function seoPropertyJS(property, content) {
+      var meta = document.createElement('meta');
+      meta.setAttribute('property', property);
+      meta.setAttribute('content', content);
+      document.getElementsByTagName('head')[0].appendChild(meta);
+  }
+
+  function seoAttributeJS(key, val) {
+      var meta = document.createElement('meta');
+      meta.setAttribute(key, val);
+      document.getElementsByTagName('head')[0].appendChild(meta);
+  }
+  </script>
+</body>
+</html>
 ```
 
 Second: Add to pubspec.yaml:
@@ -56,9 +67,9 @@ Widget build(BuildContext context) {
 
   // Define MetaSEO object with optional needed attributes
   MetaSEO meta = MetaSEO(
-      author: 'Eng Mouaz M AlShahmeh',
-      description: 'Meta SEO Web Example',
-      keywords: 'Flutter, Dart, SEO, Meta, Web'
+          author: 'Eng Mouaz M AlShahmeh',
+          description: 'Meta SEO Web Example',
+          keywords: 'Flutter, Dart, SEO, Meta, Web'
   );
 
   // add meta seo data for web app
@@ -78,4 +89,3 @@ Make sure to check out [example project](https://github.com/Eng-Mouaz-M-AlShahme
 If you find this package useful, star my GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo).
 
 Flutter plugin was developed by: [Eng Mouaz M. Al-Shahmeh](https://twitter.com/mouaz_m_shahmeh)
-

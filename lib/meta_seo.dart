@@ -192,7 +192,6 @@ class MetaSEO {
   void seoRobots() {
     js.context.callMethod('seoNameJS', ['robots', robots]);
   }
-
 }
 
 /// End of code

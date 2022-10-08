@@ -50,7 +50,7 @@ Second: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^1.0.2
+  meta_seo: ^1.0.3
 ```
 
 Then import it to your project:

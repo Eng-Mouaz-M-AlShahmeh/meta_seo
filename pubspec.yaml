@@ -1,7 +1,7 @@
 # Developed by Eng Mouaz M AlShahmeh
 name: meta_seo
 description: Meta SEO is package for adding meta data for html document in head tag which meta tags or meta data make search engine optimization for web apps.
-version: 1.0.3
+version: 1.0.4
 repository: https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo
 environment:
   sdk: '>=2.18.2 <3.0.0'

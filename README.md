@@ -101,7 +101,7 @@ Second: Add to pubspec.yaml:
 ```yaml
 dependencies:
   meta_seo: ^1.0.4
-  go_router: ^5.2.0 # add latest version
+  go_router: ^5.2.0 # add the latest version
 ```
 
 Then follow GoRouter configuration steps and latest add MetaSEO into your GoRouter as you want:

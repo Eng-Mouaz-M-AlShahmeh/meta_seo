@@ -23,23 +23,32 @@ First: Add the bellow MetaSEO JS functions into web/index.html
 
   // add  MetaSEO JS functions here
   function seoNameJS(name, content) {
-      var meta = document.createElement('meta');
-      meta.setAttribute('name', name);
-      meta.setAttribute('content', content);
-      document.getElementsByTagName('head')[0].appendChild(meta);
+    if(document.querySelector("[name='"+name+"']") !== null) {
+      document.querySelector("[name='"+name+"']").remove();
+    }
+    var meta = document.createElement('meta');
+    meta.setAttribute('name', name);
+    meta.setAttribute('content', content);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
 
   function seoPropertyJS(property, content) {
-      var meta = document.createElement('meta');
-      meta.setAttribute('property', property);
-      meta.setAttribute('content', content);
-      document.getElementsByTagName('head')[0].appendChild(meta);
+    if(document.querySelector("[property='"+property+"']") !== null) {
+      document.querySelector("[property='"+property+"']").remove();
+    }
+    var meta = document.createElement('meta');
+    meta.setAttribute('property', property);
+    meta.setAttribute('content', content);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
 
   function seoAttributeJS(key, val) {
-      var meta = document.createElement('meta');
-      meta.setAttribute(key, val);
-      document.getElementsByTagName('head')[0].appendChild(meta);
+    if(document.querySelector("[name='"+key+"']") !== null) {
+      document.querySelector("[name='"+key+"']").remove();
+    }
+    var meta = document.createElement('meta');
+    meta.setAttribute(key, val);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
   </script>
 </body>
@@ -50,7 +59,7 @@ Second: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^1.0.3
+  meta_seo: ^1.0.4
 ```
 
 Then import it to your project:
@@ -82,6 +91,66 @@ Widget build(BuildContext context) {
   );
 }
 ```
+
+## Other example with GoRouter package
+
+First: The same as before
+
+Second: Add to pubspec.yaml:
+
+```yaml
+dependencies:
+  meta_seo: ^1.0.4
+  go_router: ^5.2.0 # add latest version
+```
+
+Then follow GoRouter configuration steps and latest add MetaSEO into your GoRouter as you want:
+
+```dart
+final router = GoRouter(
+  initialLocation: '/',
+  routes: <GoRoute>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        // Define MetaSEO object with optional needed attributes
+        MetaSEO meta = MetaSEO(
+                author: 'Eng Mouaz M AlShahmeh',
+                description: 'First Screen',
+                keywords: 'Flutter, Dart, SEO, Meta, Web');
+
+        // add meta seo data for web app
+        meta.seoAuthor();
+        meta.seoDescription();
+        meta.seoKeywords();
+
+        return const FirstScreen();
+      },
+    ),
+    GoRoute(
+      path: '/second_screen',
+      builder: (BuildContext context, GoRouterState state) {
+        // Define MetaSEO object with optional needed attributes
+        MetaSEO meta = MetaSEO(
+                author: 'Eng Mouaz M AlShahmeh',
+                description: 'Second Screen',
+                keywords: 'Flutter, Dart, SEO, Meta, Web');
+
+        // add meta seo data for web app
+        meta.seoAuthor();
+        meta.seoDescription();
+        meta.seoKeywords();
+
+        return const SecondScreen();
+      },
+    ),
+  ],
+);
+```
+
+Make sure to check out [go_router_meta_seo_example project](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
+If you find this package useful, star my example GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
+
 
 ## Thank you
 

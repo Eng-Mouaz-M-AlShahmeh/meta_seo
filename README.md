@@ -153,7 +153,7 @@ If you find this package useful, star my example GitHub [repository](https://git
 
 
 ## Thank you
-
+ 
 Make sure to check out [example project](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo/tree/main/example).
 If you find this package useful, star my GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo).
 

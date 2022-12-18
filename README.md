@@ -66,6 +66,7 @@ Then import it to your project:
 
 ```dart
 import 'package:meta_seo/meta_seo.dart';
+import 'package:flutter/foundation.dart';
 ```
 
 Finally add **MetaSEO** into your target web pages:

@@ -1,4 +1,5 @@
 // Developed by Eng Mouaz M AlShahmeh
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
 
@@ -27,22 +28,18 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    // Define MetaSEO object with optional needed attributes
-    MetaSEO meta = MetaSEO(
-      author: 'Eng Mouaz M AlShahmeh',
-      description: 'Meta SEO Web Example',
-      keywords: 'Flutter, Dart, SEO, Meta, Web'
-    );
-
-    // add meta seo data for web app
-    meta.seoAuthor();
-    meta.seoDescription();
-    meta.seoKeywords();
+    // Add MetaSEO just into Web platform condition
+    if (kIsWeb) {
+      // Define MetaSEO object
+      MetaSEO meta = MetaSEO();
+      // add meta seo data for web app as you want
+      meta.seoAuthor('Eng Mouaz M AlShahmeh');
+      meta.seoDescription('Meta SEO Web Example');
+      meta.seoKeywords('Flutter, Dart, SEO, Meta, Web');
+    }
 
     return const Scaffold(
       body: Center(child: Text('Meta SEO Web Example')),
     );
   }
 }
-

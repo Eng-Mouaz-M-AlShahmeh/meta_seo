@@ -59,7 +59,7 @@ Second: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^1.0.4
+  meta_seo: ^1.0.5
 ```
 
 Then import it to your project:
@@ -74,17 +74,15 @@ Finally add **MetaSEO** into your target web pages:
 @override
 Widget build(BuildContext context) {
 
-  // Define MetaSEO object with optional needed attributes
-  MetaSEO meta = MetaSEO(
-          author: 'Eng Mouaz M AlShahmeh',
-          description: 'Meta SEO Web Example',
-          keywords: 'Flutter, Dart, SEO, Meta, Web'
-  );
-
-  // add meta seo data for web app
-  meta.seoAuthor();
-  meta.seoDescription();
-  meta.seoKeywords();
+  // Add MetaSEO just into Web platform condition
+  if(kIsWeb) {
+    // Define MetaSEO object
+    MetaSEO meta = MetaSEO();
+    // add meta seo data for web app as you want
+    meta.seoAuthor('Eng Mouaz M AlShahmeh');
+    meta.seoDescription('Meta SEO Web Example');
+    meta.seoKeywords('Flutter, Dart, SEO, Meta, Web');
+  }
 
   return const Scaffold(
     body: Center(child: Text('Meta SEO Web Example')),
@@ -100,8 +98,8 @@ Second: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^1.0.4
-  go_router: ^5.2.0 # add the latest version
+  meta_seo: ^1.0.5
+  go_router: ^5.2.0 # Add the latest version
 ```
 
 Then follow GoRouter configuration steps and latest add MetaSEO into your GoRouter as you want:
@@ -113,16 +111,15 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        // Define MetaSEO object with optional needed attributes
-        MetaSEO meta = MetaSEO(
-                author: 'Eng Mouaz M AlShahmeh',
-                description: 'First Screen',
-                keywords: 'Flutter, Dart, SEO, Meta, Web');
-
-        // add meta seo data for web app
-        meta.seoAuthor();
-        meta.seoDescription();
-        meta.seoKeywords();
+        // Add MetaSEO just into Web platform condition
+        if(kIsWeb) {
+          // Define MetaSEO object
+          MetaSEO meta = MetaSEO();
+          // add meta seo data for web app as you want
+          meta.seoOGTitle('First Screen');
+          meta.seoDescription('First Screen');
+          meta.seoKeywords('Flutter, Dart, SEO, Meta, Web');
+        }
 
         return const FirstScreen();
       },
@@ -130,16 +127,15 @@ final router = GoRouter(
     GoRoute(
       path: '/second_screen',
       builder: (BuildContext context, GoRouterState state) {
-        // Define MetaSEO object with optional needed attributes
-        MetaSEO meta = MetaSEO(
-                author: 'Eng Mouaz M AlShahmeh',
-                description: 'Second Screen',
-                keywords: 'Flutter, Dart, SEO, Meta, Web');
-
-        // add meta seo data for web app
-        meta.seoAuthor();
-        meta.seoDescription();
-        meta.seoKeywords();
+        // Add MetaSEO just into Web platform condition
+        if(kIsWeb) {
+          // Define MetaSEO object
+          MetaSEO meta = MetaSEO();
+          // add meta seo data for web app as you want
+          meta.seoOGTitle('Second Screen');
+          meta.seoDescription('Second Screen');
+          meta.seoKeywords('Flutter, Dart, SEO, Meta, Web');
+        }
 
         return const SecondScreen();
       },
@@ -153,7 +149,7 @@ If you find this package useful, star my example GitHub [repository](https://git
 
 
 ## Thank you
- 
+
 Make sure to check out [example project](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo/tree/main/example).
 If you find this package useful, star my GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo).
 

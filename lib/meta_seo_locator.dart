@@ -4,25 +4,6 @@
 
 import 'meta_seo.dart';
 
-MetaSEO getPlatformMeta(
-        {String? author,
-        String? description,
-        String? keywords,
-        String? charset,
-        String? httpEquiv,
-        String? viewport,
-        String? ogTitle,
-        String? ogDescription,
-        String? ogImage,
-        String? twitterTitle,
-        String? twitterDescription,
-        String? twitterImage,
-        String? robots,
-        String? metaName,
-        String? metaNameContent,
-        String? metaProperty,
-        String? metaPropertyContent,
-        String? metaKey,
-        String? metaValue}) =>
+MetaSEO getPlatformMeta() =>
     throw UnsupportedError(
         'Cannot create MetaSEO without the package dart:html');

@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
 
 void main() {
+  // It is required to add the following to run the meta_seo package correctly
+  // before the running of the Flutter app
+  if (kIsWeb) {
+    MetaSEO().seoMetaConfig();
+  }
   runApp(const MyApp());
 }
 
@@ -32,7 +37,7 @@ class MyHomePage extends StatelessWidget {
     if (kIsWeb) {
       // Define MetaSEO object
       MetaSEO meta = MetaSEO();
-      // add meta seo data for web app as you want
+      // Add meta seo data for web app as you want
       meta.seoAuthor('Eng Mouaz M AlShahmeh');
       meta.seoDescription('Meta SEO Web Example');
       meta.seoKeywords('Flutter, Dart, SEO, Meta, Web');

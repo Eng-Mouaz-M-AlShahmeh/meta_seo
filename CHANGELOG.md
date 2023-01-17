@@ -1,3 +1,9 @@
+## [2.0.2] - 2023/01/17
+
+* Update the minimum Dart SDK version to 2.18.6
+* Update the flutter_lints version to 2.0.1
+* Update all examples to the new version
+
 ## [2.0.1] - 2023/01/17
 
 * Delete any needed html config javascript codes and embed it into the package by seoMetaConfig method

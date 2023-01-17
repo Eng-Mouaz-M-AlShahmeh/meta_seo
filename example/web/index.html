@@ -53,27 +53,6 @@
         return appRunner.runApp();
       });
     });
-
-    // TODO:: Add the bellow MetaSEO JS functions
-    function seoNameJS(name, content) {
-      var meta = document.createElement('meta');
-      meta.setAttribute('name', name);
-      meta.setAttribute('content', content);
-      document.getElementsByTagName('head')[0].appendChild(meta);
-    }
-
-    function seoPropertyJS(property, content) {
-      var meta = document.createElement('meta');
-      meta.setAttribute('property', property);
-      meta.setAttribute('content', content);
-      document.getElementsByTagName('head')[0].appendChild(meta);
-    }
-
-    function seoAttributeJS(key, val) {
-      var meta = document.createElement('meta');
-      meta.setAttribute(key, val);
-      document.getElementsByTagName('head')[0].appendChild(meta);
-    }
   </script>
 </body>
 </html>

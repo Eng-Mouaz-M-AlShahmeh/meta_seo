@@ -7,12 +7,66 @@
 /// Adding necessary packages
 import 'package:meta_seo/meta_seo.dart';
 import 'dart:js' as js;
+import 'dart:html';
 
 /// Code starts here
 
 class WebMetaSEO implements MetaSEO {
   /// Definition of [WebMetaSEO] instance
   WebMetaSEO();
+
+  /// Add web seo mata config method which remove any javascript
+  /// code with the same id [metaSEOScripts] and replace if exists with
+  /// needed one before the end of the body of the html web file automatically.
+  /// This method should be run before any meta seo method to run the package correctly
+  /// Implement the interface
+  @override
+  void seoMetaConfig() {
+    /// Define the ScriptElement
+    ScriptElement script = ScriptElement();
+
+    /// Define the id of the ScriptElement
+    script.id = 'metaSEOScripts';
+
+    /// Define the javascript code of the ScriptElement
+    script.innerHtml = """
+    function seoNameJS(name, content) {
+      var meta = document.createElement('meta');
+      meta.setAttribute('name', name);
+      meta.setAttribute('content', content);
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+
+    function seoPropertyJS(property, content) {
+      var meta = document.createElement('meta');
+      meta.setAttribute('property', property);
+      meta.setAttribute('content', content);
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+
+    function seoAttributeJS(key, val) {
+      var meta = document.createElement('meta');
+      meta.setAttribute(key, val);
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+    """;
+
+    /// Make loop in html file body to check of any node with the same id
+    for (int i = 0; i < document.body!.children.length; i++) {
+      /// Check if the id of the package is exists in the html document
+      if (document.body!.children[i].id == 'metaSEOScripts') {
+        /// Remove any node with the same id of the javascript functions
+        document.body!.children[i].remove();
+
+        /// Then break the loop after deleting
+        break;
+      }
+    }
+
+    /// Add new or replace the javascript needed functions to the end
+    /// of the body of the html document
+    document.body!.insertAdjacentElement('beforeEnd', script);
+  }
 
   /// Definition of [metaName] meta tag attribute
   /// If you do not found meta name you want just use metaName
@@ -22,6 +76,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoMetaNameContent(String metaName, String metaNameContent) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', [metaName, metaNameContent]);
   }
 
@@ -33,6 +88,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoMetaPropertyContent(String metaProperty, String metaPropertyContent) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', [metaProperty, metaPropertyContent]);
   }
 
@@ -44,6 +100,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoMetaKeyValue(String metaKey, String metaValue) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', [metaKey, metaValue]);
   }
 
@@ -54,6 +111,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoAuthor(String author) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['author', author]);
   }
 
@@ -64,6 +122,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoDescription(String description) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['description', description]);
   }
 
@@ -74,6 +133,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoKeywords(String keywords) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['keywords', keywords]);
   }
 
@@ -85,6 +145,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoViewport(String viewport) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['viewport', viewport]);
   }
 
@@ -95,6 +156,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoHttpEquiv(String httpEquiv) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', ['http-equiv', httpEquiv]);
   }
 
@@ -105,6 +167,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoCharset(String charset) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', ['charset', charset]);
   }
 
@@ -115,6 +178,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoOGTitle(String ogTitle) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['og:title', ogTitle]);
   }
 
@@ -125,6 +189,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoOGDescription(String ogDescription) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['og:description', ogDescription]);
   }
 
@@ -135,6 +200,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoOGImage(String ogImage) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['og:image', ogImage]);
   }
 
@@ -144,6 +210,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoTwitterTitle(String twitterTitle) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['twitter:title', twitterTitle]);
   }
 
@@ -153,6 +220,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoTwitterDescription(String twitterDescription) {
+    /// Call the javascript function with needed attributes
     js.context
         .callMethod('seoNameJS', ['twitter:description', twitterDescription]);
   }
@@ -163,6 +231,7 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoTwitterImage(String twitterImage) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['twitter:image', twitterImage]);
   }
 
@@ -173,10 +242,13 @@ class WebMetaSEO implements MetaSEO {
   /// Implement the interface
   @override
   void seoRobots(String robots) {
+    /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['robots', robots]);
   }
 }
 
+/// If the platform is web return back the [WebMetaSEO]
+/// with implementation of the [MetaSEO] class
 MetaSEO getPlatformMeta() => WebMetaSEO();
 
 /// End of code

@@ -1,3 +1,7 @@
+## [2.0.1] - 2023/01/17
+
+* Delete any needed html config javascript codes and embed it into the package by seoMetaConfig method
+
 ## [1.0.5] - 2022/12/18
 
 * Fix: Add MetaSEO only if platform is web and if other just ignore

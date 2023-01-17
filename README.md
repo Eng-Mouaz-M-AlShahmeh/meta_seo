@@ -27,7 +27,7 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:flutter/foundation.dart';
 ```
 
-Then add the config **MetaSEO** method before the running of the Flutter app into main.dart file
+Then add the config **MetaSEO** method before the running of the Flutter app into main.dart file:
 
 ```dart
 void main() {
@@ -64,14 +64,25 @@ Widget build(BuildContext context) {
 
 ## Other example with GoRouter package
 
-First: The same as before
-
-Second: Add to pubspec.yaml:
+First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
   meta_seo: ^2.0.1
   go_router: ^5.2.0 # Add the latest version
+```
+
+Second: The same as before and add the config **MetaSEO** method before the running of the Flutter app into main.dart file:
+
+```dart
+void main() {
+  // It is required to add the following to run the meta_seo package correctly
+  // before the running of the Flutter app
+  if (kIsWeb) {
+    MetaSEO().seoMetaConfig();
+  }
+  runApp(const MyApp());
+}
 ```
 
 Then follow GoRouter configuration steps and latest add MetaSEO into your GoRouter as you want:

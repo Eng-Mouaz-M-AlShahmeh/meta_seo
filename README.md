@@ -13,60 +13,31 @@ Flutter package for Meta SEO.
 
 ## Installation and Basic Usage
 
-First: Add the bellow MetaSEO JS functions into web/index.html
-
-```
-.....
-  <script>
-      window.addEventListener('load', function(ev) {
-      .....
-
-  // add  MetaSEO JS functions here
-  function seoNameJS(name, content) {
-    if(document.querySelector("[name='"+name+"']") !== null) {
-      document.querySelector("[name='"+name+"']").remove();
-    }
-    var meta = document.createElement('meta');
-    meta.setAttribute('name', name);
-    meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
-  }
-
-  function seoPropertyJS(property, content) {
-    if(document.querySelector("[property='"+property+"']") !== null) {
-      document.querySelector("[property='"+property+"']").remove();
-    }
-    var meta = document.createElement('meta');
-    meta.setAttribute('property', property);
-    meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
-  }
-
-  function seoAttributeJS(key, val) {
-    if(document.querySelector("[name='"+key+"']") !== null) {
-      document.querySelector("[name='"+key+"']").remove();
-    }
-    var meta = document.createElement('meta');
-    meta.setAttribute(key, val);
-    document.getElementsByTagName('head')[0].appendChild(meta);
-  }
-  </script>
-</body>
-</html>
-```
-
-Second: Add to pubspec.yaml:
+First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^1.0.5
+  meta_seo: ^2.0.1
 ```
 
-Then import it to your project:
+Second: import it to your project:
 
 ```dart
 import 'package:meta_seo/meta_seo.dart';
 import 'package:flutter/foundation.dart';
+```
+
+Then add the config **MetaSEO** method before the running of the Flutter app into main.dart file
+
+```dart
+void main() {
+  // It is required to add the following to run the meta_seo package correctly
+  // before the running of the Flutter app
+  if (kIsWeb) {
+    MetaSEO().seoMetaConfig();
+  }
+  runApp(const MyApp());
+}
 ```
 
 Finally add **MetaSEO** into your target web pages:
@@ -99,7 +70,7 @@ Second: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^1.0.5
+  meta_seo: ^2.0.1
   go_router: ^5.2.0 # Add the latest version
 ```
 

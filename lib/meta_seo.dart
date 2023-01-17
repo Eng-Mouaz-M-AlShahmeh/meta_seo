@@ -2,12 +2,20 @@
 /// https://malshahmeh.web.app
 /// MetaSEO package
 
+/// Define our [MetaSEO] library
 library mata_seo;
 
+/// Import the implementation if the platform is web
 import 'meta_seo_locator.dart' if (dart.library.html) "web_meta_seo.dart";
 
 /// Make it as interface to implement later on only Web platform
 abstract class MetaSEO {
+  /// Add web seo mata config method which remove any javascript
+  /// code with the same id [metaSEOScripts] and replace if exists with
+  /// needed one before the end of the body of the html web file automatically.
+  /// This method should be run before any meta seo method to run the package correctly
+  void seoMetaConfig();
+
   /// Definition of [metaName] meta tag attribute
   /// If you do not found meta name you want just use metaName
   /// Definition of [metaNameContent] meta tag attribute
@@ -98,5 +106,6 @@ abstract class MetaSEO {
   /// Add web mata data of [robots] attribute
   void seoRobots(String robots);
 
+  /// Check the platform if is web so get the correct code
   factory MetaSEO() => getPlatformMeta();
 }

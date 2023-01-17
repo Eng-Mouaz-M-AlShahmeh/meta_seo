@@ -2,8 +2,9 @@
 /// https://malshahmeh.web.app
 /// MetaSEO package
 
+/// Import the class of [MetaSEO]
 import 'meta_seo.dart';
 
-MetaSEO getPlatformMeta() =>
-    throw UnsupportedError(
-        'Cannot create MetaSEO without the package dart:html');
+/// Throw an error if the platform is not web
+MetaSEO getPlatformMeta() => throw UnsupportedError(
+    'Cannot create MetaSEO without the package dart:html. Just wrap the MetaSEO with "if(kIsWeb) condition."');

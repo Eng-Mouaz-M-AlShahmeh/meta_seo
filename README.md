@@ -17,7 +17,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^2.0.2
+  meta_seo: ^2.0.3
 ```
 
 Second: import it to your project:
@@ -68,7 +68,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^2.0.2
+  meta_seo: ^2.0.3
   go_router: ^5.2.0 # Add the latest version
 ```
 
@@ -127,9 +127,49 @@ final router = GoRouter(
 );
 ```
 
+## Extended **MetaSEO** tags
+
+If you want to use Open Graph or Twitter Card meta tags
+
+Note: You must be in live server not as a local host.
+Note: The package delete any duplicated meta tags and keep the latest in order.
+
+The same as before and if you want to use any tags does not exist into the main package 
+methods just add extended tags as the below:
+
+```dart
+@override
+Widget build(BuildContext context) {
+  
+    // Add MetaSEO just into Web platform condition
+    if(kIsWeb) {
+      // Define MetaSEO object
+      MetaSEO meta = MetaSEO();
+      // add meta seo open graph tags as you want
+      meta.seoOGTitle('Example Screen');
+      meta.seoOGDescription('Example Screen Description');
+      meta.seoOGImage('https://example.com/example.png');
+      
+      // here you can add any tags does not exist in the package as this
+      meta.seoMetaPropertyContent('og:site_name', 'example');
+      
+      // or if you want to add twitter card meta tags just as the following
+      meta.seoTwitterTitle('Example Screen');
+      meta.seoTwitterDescription('Example Screen Description');
+      meta.seoTwitterImage('https://example.com/example.png');
+    
+      // here you can add any tags does not exist in the package as this
+      meta.seoMetaNameContent('twitter:card', 'summary_large_image');
+    }
+    
+    return const Scaffold(
+      body: Center(child: Text('Extended Meta SEO Web Example')),
+    );
+}
+```
+
 Make sure to check out [go_router_meta_seo_example project](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
 If you find this package useful, star my example GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
-
 
 ## Thank you
 

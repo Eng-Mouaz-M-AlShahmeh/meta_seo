@@ -1,3 +1,8 @@
+## [2.0.3] - 2023/02/23
+
+* Update the minimum Dart SDK version to 2.19.0
+* Update README.md file
+
 ## [2.0.2] - 2023/01/17
 
 * Update the minimum Dart SDK version to 2.18.6

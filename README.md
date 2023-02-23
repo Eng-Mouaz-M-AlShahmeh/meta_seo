@@ -132,6 +132,7 @@ final router = GoRouter(
 If you want to use Open Graph or Twitter Card meta tags
 
 Note: You must be in live server not as a local host.
+
 Note: The package delete any duplicated meta tags and keep the latest in order.
 
 The same as before and if you want to use any tags does not exist into the main package 

@@ -21,7 +21,7 @@ class WebMetaSEO implements MetaSEO {
   /// This method should be run before any meta seo method to run the package correctly
   /// Implement the interface
   @override
-  void seoMetaConfig() {
+  seoMetaConfig() {
     /// Define the ScriptElement
     ScriptElement script = ScriptElement();
 
@@ -58,6 +58,13 @@ class WebMetaSEO implements MetaSEO {
     meta.setAttribute(key, val);
     document.getElementsByTagName('head')[0].appendChild(meta);
   }
+  
+  function seoRobotsJS(name, content) {
+    var meta = document.createElement('meta');
+    meta.setAttribute('name', name);
+    meta.setAttribute('content', content);
+    document.getElementsByTagName('head')[0].appendChild(meta);
+  }
     """;
 
     /// Make loop in html file body to check of any node with the same id
@@ -77,40 +84,40 @@ class WebMetaSEO implements MetaSEO {
     document.body!.insertAdjacentElement('beforeEnd', script);
   }
 
-  /// Definition of [metaName] meta tag attribute
+  /// Definition of [name] meta tag attribute
   /// If you do not found meta name you want just use metaName
-  /// Definition of [metaNameContent] meta tag attribute
+  /// Definition of [content] meta tag attribute
   /// The value is used for other named meta not listed in attributes by metaNameContent
   /// Add web mata data of other meta named with content
   /// Implement the interface
   @override
-  void seoMetaNameContent(String metaName, String metaNameContent) {
+  seoMetaNameContent({required String name, required String content}) {
     /// Call the javascript function with needed attributes
-    js.context.callMethod('seoNameJS', [metaName, metaNameContent]);
+    js.context.callMethod('seoNameJS', [name, content]);
   }
 
-  /// Definition of [metaProperty] meta tag attribute
+  /// Definition of [property] meta tag attribute
   /// If you do not found meta property you want just use metaProperty
-  /// Definition of [metaPropertyContent] meta tag attribute
+  /// Definition of [content] meta tag attribute
   /// The value is used for other property meta not listed in attributes by metaPropertyContent
   /// Add web mata data of other meta property with content
   /// Implement the interface
   @override
-  void seoMetaPropertyContent(String metaProperty, String metaPropertyContent) {
+  seoMetaPropertyContent({required String property, required String content}) {
     /// Call the javascript function with needed attributes
-    js.context.callMethod('seoPropertyJS', [metaProperty, metaPropertyContent]);
+    js.context.callMethod('seoPropertyJS', [property, content]);
   }
 
-  /// Definition of [metaKey] meta tag attribute
+  /// Definition of [key] meta tag attribute
   /// If you do not found meta key you want just use metaKey
-  /// Definition of [metaValue] meta tag attribute
+  /// Definition of [value] meta tag attribute
   /// The value is used for other key-value meta not listed in attributes by metaValue
   /// Add web mata data of other meta key with value
   /// Implement the interface
   @override
-  void seoMetaKeyValue(String metaKey, String metaValue) {
+  seoMetaKeyValue({required String key, required String value}) {
     /// Call the javascript function with needed attributes
-    js.context.callMethod('seoAttributeJS', [metaKey, metaValue]);
+    js.context.callMethod('seoAttributeJS', [key, value]);
   }
 
   /// Definition of [author] meta tag attribute
@@ -119,7 +126,7 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? author = 'Eng Mouaz M AlShahmeh';
   /// Implement the interface
   @override
-  void seoAuthor(String author) {
+  seoAuthor({required String author}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['author', author]);
   }
@@ -130,7 +137,7 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? description = 'Simple SEO description mata data';
   /// Implement the interface
   @override
-  void seoDescription(String description) {
+  seoDescription({required String description}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['description', description]);
   }
@@ -141,7 +148,7 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? keywords = 'Flutter, Dart, Simple SEO';
   /// Implement the interface
   @override
-  void seoKeywords(String keywords) {
+  seoKeywords({required String keywords}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['keywords', keywords]);
   }
@@ -153,7 +160,7 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? viewport = 'width=device-width, initial-scale=1';
   /// Implement the interface
   @override
-  void seoViewport(String viewport) {
+  seoViewport({required String viewport}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['viewport', viewport]);
   }
@@ -164,7 +171,7 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? httpEquiv = 'X-UA-Compatible';
   /// Implement the interface
   @override
-  void seoHttpEquiv(String httpEquiv) {
+  seoHttpEquiv({required String httpEquiv}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', ['http-equiv', httpEquiv]);
   }
@@ -175,7 +182,7 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? charset = 'UTF-8';
   /// Implement the interface
   @override
-  void seoCharset(String charset) {
+  seoCharset({required String charset}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', ['charset', charset]);
   }
@@ -186,7 +193,7 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [ogTitle] attribute
   /// Implement the interface
   @override
-  void seoOGTitle(String ogTitle) {
+  seoOGTitle({required String ogTitle}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['og:title', ogTitle]);
   }
@@ -197,7 +204,7 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [ogDescription] attribute
   /// Implement the interface
   @override
-  void seoOGDescription(String ogDescription) {
+  seoOGDescription({required String ogDescription}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['og:description', ogDescription]);
   }
@@ -208,9 +215,56 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [ogImage] attribute
   /// Implement the interface
   @override
-  void seoOGImage(String ogImage) {
+  seoOGImage({required String ogImage}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['og:image', ogImage]);
+  }
+
+  /// Definition of [twitter:card] meta tag attribute
+  /// https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
+  /// Add web mata data of [twitterCard] attribute
+  /// Implement the interface
+  @override
+  seoTwitterCard({required TwitterCard twitterCard}) {
+    /// Make switch loop according to twitterCard state
+    switch (twitterCard) {
+      /// If the case is summary then run the following
+      case TwitterCard.summary:
+
+        /// Call the javascript function with summary attribute
+        js.context.callMethod('seoNameJS', ['twitter:card', 'summary']);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is summaryLargeImage then run the following
+      case TwitterCard.summaryLargeImage:
+
+        /// Call the javascript function with summary_large_image attribute
+        js.context
+            .callMethod('seoNameJS', ['twitter:card', 'summary_large_image']);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is app then run the following
+      case TwitterCard.app:
+
+        /// Call the javascript function with app attribute
+        js.context.callMethod('seoNameJS', ['twitter:card', 'app']);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is player then run the following
+      case TwitterCard.player:
+
+        /// Call the javascript function with player attribute
+        js.context.callMethod('seoNameJS', ['twitter:card', 'player']);
+
+        /// Break the switch loop if done
+        break;
+    }
   }
 
   /// Definition of [twitter:title] meta tag attribute
@@ -218,7 +272,7 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterTitle] attribute
   /// Implement the interface
   @override
-  void seoTwitterTitle(String twitterTitle) {
+  seoTwitterTitle({required String twitterTitle}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['twitter:title', twitterTitle]);
   }
@@ -228,7 +282,7 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterDescription] attribute
   /// Implement the interface
   @override
-  void seoTwitterDescription(String twitterDescription) {
+  seoTwitterDescription({required String twitterDescription}) {
     /// Call the javascript function with needed attributes
     js.context
         .callMethod('seoNameJS', ['twitter:description', twitterDescription]);
@@ -239,20 +293,67 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterImage] attribute
   /// Implement the interface
   @override
-  void seoTwitterImage(String twitterImage) {
+  seoTwitterImage({required String twitterImage}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['twitter:image', twitterImage]);
   }
 
-  /// Definition of [robots] meta tag attribute
+  /// Definition of [robotsName] meta tag attribute
+  /// Definition of [content] meta tag attribute
   /// https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
-  /// Add web mata data of [robots] attribute
-  /// Example: String? robots = 'noindex, nofollow';
+  /// Add web mata data of [robotsName] attribute
+  /// Add web mata data of [content] attribute
   /// Implement the interface
   @override
-  void seoRobots(String robots) {
-    /// Call the javascript function with needed attributes
-    js.context.callMethod('seoNameJS', ['robots', robots]);
+  seoRobots({required RobotsName robotsName, required String content}) {
+    /// Make switch loop according to robotsName state
+    switch (robotsName) {
+      /// If the case is google then run the following
+      case RobotsName.google:
+
+        /// Call the javascript function with google attribute
+        js.context.callMethod('seoRobotsJS', ['google', content]);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is googleBot then run the following
+      case RobotsName.googleBot:
+
+        /// Call the javascript function with googleBot attribute
+        js.context.callMethod('seoRobotsJS', ['googlebot', content]);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is googleBotNews then run the following
+      case RobotsName.googleBotNews:
+
+        /// Call the javascript function with googleBotNews attribute
+        js.context.callMethod('seoRobotsJS', ['googlebot-news', content]);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is googleSiteVerification then run the following
+      case RobotsName.googleSiteVerification:
+
+        /// Call the javascript function with googleSiteVerification attribute
+        js.context
+            .callMethod('seoNameJS', ['google-site-verification', content]);
+
+        /// Break the switch loop if done
+        break;
+
+      /// If the case is robots then run the following
+      case RobotsName.robots:
+
+        /// Call the javascript function with robots attribute
+        js.context.callMethod('seoRobotsJS', ['robots', content]);
+
+        /// Break the switch loop if done
+        break;
+    }
   }
 }
 

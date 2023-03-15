@@ -1,3 +1,16 @@
+## [3.0.1] - 2023/02/23
+
+* Changing the way of passing the parameters as required with title everywhere
+* Add TwitterCard enum values
+* Add seoTwitterCard method
+* Remove all of void keywords from all methods
+* Changing of all attributes titles of the main three methods for extension (seoMetaNameContent, seoMetaPropertyContent, seoMetaKeyValue) with simpler titles
+* Update all of seoRobots method functionality and add RobotsName enum
+* Add JS seoRobotsJS function to supply repeated named robots with different content
+* Update example to new version
+* Update README.md file
+* Update version to 3.0.1
+
 ## [2.0.3] - 2023/02/23
 
 * Update the minimum Dart SDK version to 2.19.0

@@ -24,8 +24,10 @@ class WebMetaSEO implements MetaSEO {
   config() {
     /// Define the ScriptElement
     ScriptElement script = ScriptElement();
+
     /// Define the id of the ScriptElement
     script.id = 'metaSEOScripts';
+
     /// Define the javascript code of the ScriptElement
     script.innerHtml = """
   function seoNameJS(name, content) {
@@ -71,16 +73,19 @@ class WebMetaSEO implements MetaSEO {
     document.getElementsByTagName('head')[0].appendChild(meta);
   }
     """;
+
     /// Make loop in html file body to check of any node with the same id
     for (int i = 0; i < document.body!.children.length; i++) {
       /// Check if the id of the package is exists in the html document
       if (document.body!.children[i].id == 'metaSEOScripts') {
         /// Remove any node with the same id of the javascript functions
         document.body!.children[i].remove();
+
         /// Then break the loop after deleting
         break;
       }
     }
+
     /// Add new or replace the javascript needed functions to the end
     /// of the body of the html document
     document.body!.insertAdjacentElement('beforeEnd', script);
@@ -93,7 +98,13 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of other meta named with content
   /// Implement the interface
   @override
-  nameContent({required String name, required String content}) {
+  nameContent(
+      {
+      /// Definition of [name] meta tag attribute
+      required String name,
+
+      /// Definition of [content] meta tag attribute
+      required String content}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', [name, content]);
   }
@@ -105,7 +116,13 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of other meta property with content
   /// Implement the interface
   @override
-  propertyContent({required String property, required String content}) {
+  propertyContent(
+      {
+      /// Definition of [property] meta tag attribute
+      required String property,
+
+      /// Definition of [content] meta tag attribute
+      required String content}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', [property, content]);
   }
@@ -117,7 +134,13 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of other meta key with value
   /// Implement the interface
   @override
-  keyValue({required String key, required String value}) {
+  keyValue(
+      {
+      /// Definition of [key] meta tag attribute
+      required String key,
+
+      /// Definition of [value] meta tag attribute
+      required String value}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', [key, value]);
   }
@@ -242,27 +265,38 @@ class WebMetaSEO implements MetaSEO {
     switch (twitterCard) {
       /// If the case is summary then run the following
       case TwitterCard.summary:
+
         /// Call the javascript function with summary attribute
         js.context.callMethod('seoNameJS', ['twitter:card', 'summary']);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is summaryLargeImage then run the following
       case TwitterCard.summaryLargeImage:
+
         /// Call the javascript function with summary_large_image attribute
         js.context
             .callMethod('seoNameJS', ['twitter:card', 'summary_large_image']);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is app then run the following
       case TwitterCard.app:
+
         /// Call the javascript function with app attribute
         js.context.callMethod('seoNameJS', ['twitter:card', 'app']);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is player then run the following
       case TwitterCard.player:
+
         /// Call the javascript function with player attribute
         js.context.callMethod('seoNameJS', ['twitter:card', 'player']);
+
         /// Break the switch loop if done
         break;
     }
@@ -306,38 +340,58 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [content] attribute
   /// Implement the interface
   @override
-  robots({required RobotsName robotsName, required String content}) {
+  robots(
+      {
+      /// Definition of [robotsName] meta tag attribute
+      required RobotsName robotsName,
+
+      /// Definition of [content] meta tag attribute
+      required String content}) {
     /// Make switch loop according to robotsName state
     switch (robotsName) {
       /// If the case is google then run the following
       case RobotsName.google:
+
         /// Call the javascript function with google attribute
         js.context.callMethod('seoRobotsJS', ['google', content]);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is googleBot then run the following
       case RobotsName.googleBot:
+
         /// Call the javascript function with googleBot attribute
         js.context.callMethod('seoRobotsJS', ['googlebot', content]);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is googleBotNews then run the following
       case RobotsName.googleBotNews:
+
         /// Call the javascript function with googleBotNews attribute
         js.context.callMethod('seoRobotsJS', ['googlebot-news', content]);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is googleSiteVerification then run the following
       case RobotsName.googleSiteVerification:
+
         /// Call the javascript function with googleSiteVerification attribute
         js.context
             .callMethod('seoNameJS', ['google-site-verification', content]);
+
         /// Break the switch loop if done
         break;
+
       /// If the case is robots then run the following
       case RobotsName.robots:
+
         /// Call the javascript function with robots attribute
         js.context.callMethod('seoRobotsJS', ['robots', content]);
+
         /// Break the switch loop if done
         break;
     }

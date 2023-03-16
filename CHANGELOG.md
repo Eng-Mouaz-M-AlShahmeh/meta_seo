@@ -1,3 +1,7 @@
+## [3.0.3] - 2023/03/17
+
+* Update the documentation
+
 ## [3.0.2] - 2023/03/16
 
 * Add facebookAppID method

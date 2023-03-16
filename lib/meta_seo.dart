@@ -16,12 +16,15 @@ import 'meta_seo_locator.dart' if (dart.library.html) "web_meta_seo.dart";
 enum TwitterCard {
   /// The card type, which will be one of
   summary,
-  /// or
+
+  /// or will be one of
   summaryLargeImage,
-  /// or
+
+  /// or will be one of
   app,
-  /// or
-  player,
+
+  /// or will be one of
+  player
 }
 
 /// Define enum options for Robots Name
@@ -35,22 +38,26 @@ enum RobotsName {
   /// be indexed and served to users in Google Search results.
   /// https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
   robots,
+
   /// When users search for your site, Google Search results sometimes
   /// display a search box specific to your site, along with other
   /// direct links to your site. This tag tells Google not
   /// to show the sitelinks search box.
   /// https://developers.google.com/search/docs/crawling-indexing/special-tags
   google,
+
   /// Google's standard web crawler has the user agent name Googlebot
   /// https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
   googleBot,
+
   /// Search engines may have different crawlers for different purposes.
   /// https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
   googleBotNews,
+
   /// You can use this tag on the top-level page of your site to verify
   /// ownership for Search Console.
   /// https://developers.google.com/search/docs/crawling-indexing/special-tags
-  googleSiteVerification,
+  googleSiteVerification
 }
 
 /// Make it as interface to implement later on only Web platform
@@ -66,21 +73,39 @@ abstract class MetaSEO {
   /// Definition of [content] meta tag attribute
   /// The value is used for other named meta not listed in attributes by metaNameContent
   /// Add web mata data of other meta named with content
-  nameContent({required String name, required String content});
+  nameContent(
+      {
+      /// Definition of [name] meta tag attribute
+      required String name,
+
+      /// Definition of [content] meta tag attribute
+      required String content});
 
   /// Definition of [property] meta tag attribute
   /// If you do not found meta property you want just use metaProperty
   /// Definition of [content] meta tag attribute
   /// The value is used for other property meta not listed in attributes by metaPropertyContent
   /// Add web mata data of other meta property with content
-  propertyContent({required String property, required String content});
+  propertyContent(
+      {
+      /// Definition of [property] meta tag attribute
+      required String property,
+
+      /// Definition of [content] meta tag attribute
+      required String content});
 
   /// Definition of [key] meta tag attribute
   /// If you do not found meta key you want just use metaKey
   /// Definition of [value] meta tag attribute
   /// The value is used for other key-value meta not listed in attributes by metaValue
   /// Add web mata data of other meta key with value
-  keyValue({required String key, required String value});
+  keyValue(
+      {
+      /// Definition of [key] meta tag attribute
+      required String key,
+
+      /// Definition of [value] meta tag attribute
+      required String value});
 
   /// Definition of [author] meta tag attribute
   /// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description
@@ -162,7 +187,13 @@ abstract class MetaSEO {
   /// https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
   /// Add web mata data of [robotsName] attribute
   /// Add web mata data of [content] attribute
-  robots({required RobotsName robotsName, required String content});
+  robots(
+      {
+      /// Definition of [robotsName] meta tag attribute
+      required RobotsName robotsName,
+
+      /// Definition of [content] meta tag attribute
+      required String content});
 
   /// Check the platform if is web so get the correct code
   factory MetaSEO() => getPlatformMeta();

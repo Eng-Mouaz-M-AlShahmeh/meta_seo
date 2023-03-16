@@ -17,7 +17,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.1
+  meta_seo: ^3.0.2
 ```
 
 Second: import it to your project:
@@ -34,7 +34,7 @@ void main() {
   // It is required to add the following to run the meta_seo package correctly
   // before the running of the Flutter app
   if (kIsWeb) {
-    MetaSEO().seoMetaConfig();
+    MetaSEO().config();
   }
   runApp(const MyApp());
 }
@@ -51,9 +51,9 @@ Widget build(BuildContext context) {
     // Define MetaSEO object
     MetaSEO meta = MetaSEO();
     // add meta seo data for web app as you want
-    meta.seoAuthor(author: 'Eng Mouaz M AlShahmeh');
-    meta.seoDescription(description: 'Meta SEO Web Example');
-    meta.seoKeywords(keywords: 'Flutter, Dart, SEO, Meta, Web');
+    meta.author(author: 'Eng Mouaz M AlShahmeh');
+    meta.description(description: 'Meta SEO Web Example');
+    meta.keywords(keywords: 'Flutter, Dart, SEO, Meta, Web');
   }
 
   return const Scaffold(
@@ -68,7 +68,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.1
+  meta_seo: ^3.0.2
   go_router: ^5.2.0 # Add the latest version
 ```
 
@@ -79,7 +79,7 @@ void main() {
   // It is required to add the following to run the meta_seo package correctly
   // before the running of the Flutter app
   if (kIsWeb) {
-    MetaSEO().seoMetaConfig();
+    MetaSEO().config();
   }
   runApp(const MyApp());
 }
@@ -99,9 +99,9 @@ final router = GoRouter(
           // Define MetaSEO object
           MetaSEO meta = MetaSEO();
           // add meta seo data for web app as you want
-          meta.seoOGTitle(ogTitle: 'First Screen');
-          meta.seoDescription(description: 'First Screen');
-          meta.seoKeywords(keywords: 'Flutter, Dart, SEO, Meta, Web');
+          meta.ogTitle(ogTitle: 'First Screen');
+          meta.description(description: 'First Screen');
+          meta.keywords(keywords: 'Flutter, Dart, SEO, Meta, Web');
         }
 
         return const FirstScreen();
@@ -115,9 +115,9 @@ final router = GoRouter(
           // Define MetaSEO object
           MetaSEO meta = MetaSEO();
           // add meta seo data for web app as you want
-          meta.seoOGTitle(ogTitle: 'Second Screen');
-          meta.seoDescription(description: 'Second Screen');
-          meta.seoKeywords(keywords: 'Flutter, Dart, SEO, Meta, Web');
+          meta.ogTitle(ogTitle: 'Second Screen');
+          meta.description(description: 'Second Screen');
+          meta.keywords(keywords: 'Flutter, Dart, SEO, Meta, Web');
         }
 
         return const SecondScreen();
@@ -147,21 +147,22 @@ Widget build(BuildContext context) {
       // Define MetaSEO object
       MetaSEO meta = MetaSEO();
       // add meta seo open graph tags as you want
-      meta.seoOGTitle(ogTitle: 'Example Screen');
-      meta.seoOGDescription(ogDescription: 'Example Screen Description');
-      meta.seoOGImage(ogImage: 'https://example.com/example.png');
+      meta.facebookAppID(facebookAppID: 'your_app_id');
+      meta.ogTitle(ogTitle: 'Example Screen');
+      meta.ogDescription(ogDescription: 'Example Screen Description');
+      meta.ogImage(ogImage: 'https://example.com/example.png');
 
       // here you can add any tags does not exist in the package as this
-      meta.seoMetaPropertyContent(property: 'og:site_name', content: 'example');
+      meta.propertyContent(property: 'og:site_name', content: 'example');
       
       // or if you want to add twitter card meta tags just as the following
-      meta.seoTwitterCard(twitterCard: TwitterCard.summaryLargeImage);
-      meta.seoTwitterTitle(twitterTitle: 'Example Screen');
-      meta.seoTwitterDescription(twitterDescription: 'Example Screen Description');
-      meta.seoTwitterImage(twitterImage: 'https://example.com/example.png');
+      meta.twitterCard(twitterCard: TwitterCard.summaryLargeImage);
+      meta.twitterTitle(twitterTitle: 'Example Screen');
+      meta.twitterDescription(twitterDescription: 'Example Screen Description');
+      meta.twitterImage(twitterImage: 'https://example.com/example.png');
     
       // here you can add any tags does not exist in the package as this
-      meta.seoMetaNameContent(name: 'twitter:site', content: '@mouaz_m_shahmeh');
+      meta.nameContent(name: 'twitter:site', content: '@mouaz_m_shahmeh');
     }
     
     return const Scaffold(

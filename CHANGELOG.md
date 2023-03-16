@@ -1,4 +1,11 @@
-## [3.0.1] - 2023/02/23
+## [3.0.2] - 2023/03/16
+
+* Add facebookAppID method
+* Enhance and shorten the methods' names
+* Add seoOpenGraphJS function to support data react helmet
+* Update README.md file
+
+## [3.0.1] - 2023/03/14
 
 * Changing the way of passing the parameters as required with title everywhere
 * Add TwitterCard enum values

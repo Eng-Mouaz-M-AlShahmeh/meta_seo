@@ -110,77 +110,119 @@ abstract class MetaSEO {
   /// Definition of [author] meta tag attribute
   /// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description
   /// Add web mata data of [author] attribute
-  author({required String author});
+  author(
+      {
+      /// Definition of [author] meta tag attribute
+      required String author});
 
   /// Definition of [description] meta tag attribute
   /// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description
   /// Add web mata data of [description] attribute
-  description({required String description});
+  description(
+      {
+      /// Definition of [description] meta tag attribute
+      required String description});
 
   /// Definition of [keywords] meta tag attribute
   /// Separate list of keyword strings by commas
   /// Add web mata data of [keywords] attribute
-  keywords({required String keywords});
+  keywords(
+      {
+      /// Definition of [keywords] meta tag attribute
+      required String keywords});
 
   /// Definition of [viewport] meta tag attribute
   /// Separate list of viewport strings by commas
   /// https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
   /// Add web mata data of [viewport] attribute
-  viewport({required String viewport});
+  viewport(
+      {
+      /// Definition of [viewport] meta tag attribute
+      required String viewport});
 
   /// Definition of [http-equiv] meta tag attribute
   /// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv
   /// Add web mata data of [httpEquiv] attribute
-  httpEquiv({required String httpEquiv});
+  httpEquiv(
+      {
+      /// Definition of [http-equiv] meta tag attribute
+      required String httpEquiv});
 
   /// Definition of [charset] meta tag attribute
   /// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset
   /// Add web mata data of [charset] attribute
-  charset({required String charset});
+  charset(
+      {
+      /// Definition of [charset] meta tag attribute
+      required String charset});
 
   /// Definition of [fb:app_id] meta tag attribute
   /// https://ogp.me
   /// https://developers.facebook.com/docs/sharing/webmasters/
   /// Add web mata data of [facebookAppID] attribute
-  facebookAppID({required String facebookAppID});
+  facebookAppID(
+      {
+      /// Definition of [fb:app_id] meta tag attribute
+      required String facebookAppID});
 
   /// Definition of [og:title] meta tag attribute
   /// https://ogp.me
   /// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#other_types_of_metadata
   /// Add web mata data of [ogTitle] attribute
-  ogTitle({required String ogTitle});
+  ogTitle(
+      {
+      /// Definition of [og:title] meta tag attribute
+      required String ogTitle});
 
   /// Definition of [og:description] meta tag attribute
   /// https://ogp.me
   /// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#other_types_of_metadata
   /// Add web mata data of [ogDescription] attribute
-  ogDescription({required String ogDescription});
+  ogDescription(
+      {
+      /// Definition of [og:description] meta tag attribute
+      required String ogDescription});
 
   /// Definition of [og:image] meta tag attribute
   /// https://ogp.me
   /// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#other_types_of_metadata
   /// Add web mata data of [ogImage] attribute
-  ogImage({required String ogImage});
+  ogImage(
+      {
+      /// Definition of [og:image] meta tag attribute
+      required String ogImage});
 
   /// Definition of [twitter:card] meta tag attribute
   /// https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
   /// Add web mata data of [twitterCard] attribute
-  twitterCard({required TwitterCard twitterCard});
+  twitterCard(
+      {
+      /// Definition of [twitter:card] meta tag attribute
+      required TwitterCard twitterCard});
 
   /// Definition of [twitter:title] meta tag attribute
   /// https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
   /// Add web mata data of [twitterTitle] attribute
-  twitterTitle({required String twitterTitle});
+  twitterTitle(
+      {
+      /// Definition of [twitter:title] meta tag attribute
+      required String twitterTitle});
 
   /// Definition of [twitter:description] meta tag attribute
   /// https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
   /// Add web mata data of [twitterDescription] attribute
-  twitterDescription({required String twitterDescription});
+  twitterDescription(
+      {
+      /// Definition of [twitter:description] meta tag attribute
+      required String twitterDescription});
 
   /// Definition of [twitter:image] meta tag attribute
   /// https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
   /// Add web mata data of [twitterImage] attribute
-  twitterImage({required String twitterImage});
+  twitterImage(
+      {
+      /// Definition of [twitter:image] meta tag attribute
+      required String twitterImage});
 
   /// Definition of [robotsName] meta tag attribute
   /// Definition of [content] meta tag attribute

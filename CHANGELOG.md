@@ -1,3 +1,7 @@
+## [3.0.4] - 2023/03/17
+
+* Fix the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) by changing the method from appendChild to prepend to the Head of the HTML
+
 ## [3.0.3] - 2023/03/17
 
 * Update the documentation

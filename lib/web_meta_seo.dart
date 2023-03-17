@@ -37,7 +37,7 @@ class WebMetaSEO implements MetaSEO {
     var meta = document.createElement('meta');
     meta.setAttribute('name', name);
     meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    document.getElementsByTagName('head')[0].prepend(meta);
   }
   function seoPropertyJS(property, content) {
     if(document.querySelector("[property='"+property+"']") !== null) {
@@ -46,7 +46,7 @@ class WebMetaSEO implements MetaSEO {
     var meta = document.createElement('meta');
     meta.setAttribute('property', property);
     meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    document.getElementsByTagName('head')[0].prepend(meta);
   }
   function seoAttributeJS(key, val) {
     if(document.querySelector("[name='"+key+"']") !== null) {
@@ -54,7 +54,7 @@ class WebMetaSEO implements MetaSEO {
     }
     var meta = document.createElement('meta');
     meta.setAttribute(key, val);
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    document.getElementsByTagName('head')[0].prepend(meta);
   }
   function seoOpenGraphJS(property, content) {
     if(document.querySelector("[property='"+property+"']") !== null) {
@@ -64,13 +64,13 @@ class WebMetaSEO implements MetaSEO {
     meta.setAttribute('property', property);
     meta.setAttribute('content', content);
     meta.setAttribute('data-rh', 'true');
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    document.getElementsByTagName('head')[0].prepend(meta);
   }
   function seoRobotsJS(name, content) {
     var meta = document.createElement('meta');
     meta.setAttribute('name', name);
     meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    document.getElementsByTagName('head')[0].prepend(meta);
   }
     """;
 
@@ -151,7 +151,10 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? author = 'Eng Mouaz M AlShahmeh';
   /// Implement the interface
   @override
-  author({required String author}) {
+  author(
+      {
+      /// Definition of [author] meta tag attribute
+      required String author}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['author', author]);
   }
@@ -162,7 +165,10 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? description = 'Simple SEO description mata data';
   /// Implement the interface
   @override
-  description({required String description}) {
+  description(
+      {
+      /// Definition of [description] meta tag attribute
+      required String description}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['description', description]);
   }
@@ -173,7 +179,10 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? keywords = 'Flutter, Dart, Simple SEO';
   /// Implement the interface
   @override
-  keywords({required String keywords}) {
+  keywords(
+      {
+      /// Definition of [keywords] meta tag attribute
+      required String keywords}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['keywords', keywords]);
   }
@@ -185,7 +194,10 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? viewport = 'width=device-width, initial-scale=1';
   /// Implement the interface
   @override
-  viewport({required String viewport}) {
+  viewport(
+      {
+      /// Definition of [viewport] meta tag attribute
+      required String viewport}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['viewport', viewport]);
   }
@@ -196,7 +208,10 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? httpEquiv = 'X-UA-Compatible';
   /// Implement the interface
   @override
-  httpEquiv({required String httpEquiv}) {
+  httpEquiv(
+      {
+      /// Definition of [http-equiv] meta tag attribute
+      required String httpEquiv}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', ['http-equiv', httpEquiv]);
   }
@@ -207,7 +222,10 @@ class WebMetaSEO implements MetaSEO {
   /// Example: String? charset = 'UTF-8';
   /// Implement the interface
   @override
-  charset({required String charset}) {
+  charset(
+      {
+      /// Definition of [charset] meta tag attribute
+      required String charset}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoAttributeJS', ['charset', charset]);
   }
@@ -217,7 +235,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [facebookAppID] attribute
   /// Implement the interface
   @override
-  facebookAppID({required String facebookAppID}) {
+  facebookAppID(
+      {
+      /// Definition of [fb:app_id] meta tag attribute
+      required String facebookAppID}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoPropertyJS', ['fb:app_id', facebookAppID]);
   }
@@ -228,7 +249,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [ogTitle] attribute
   /// Implement the interface
   @override
-  ogTitle({required String ogTitle}) {
+  ogTitle(
+      {
+      /// Definition of [og:title] meta tag attribute
+      required String ogTitle}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoOpenGraphJS', ['og:title', ogTitle]);
   }
@@ -239,7 +263,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [ogDescription] attribute
   /// Implement the interface
   @override
-  ogDescription({required String ogDescription}) {
+  ogDescription(
+      {
+      /// Definition of [og:description] meta tag attribute
+      required String ogDescription}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoOpenGraphJS', ['og:description', ogDescription]);
   }
@@ -250,7 +277,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [ogImage] attribute
   /// Implement the interface
   @override
-  ogImage({required String ogImage}) {
+  ogImage(
+      {
+      /// Definition of [og:image] meta tag attribute
+      required String ogImage}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoOpenGraphJS', ['og:image', ogImage]);
   }
@@ -260,7 +290,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterCard] attribute
   /// Implement the interface
   @override
-  twitterCard({required TwitterCard twitterCard}) {
+  twitterCard(
+      {
+      /// Definition of [twitter:card] meta tag attribute
+      required TwitterCard twitterCard}) {
     /// Make switch loop according to twitterCard state
     switch (twitterCard) {
       /// If the case is summary then run the following
@@ -307,7 +340,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterTitle] attribute
   /// Implement the interface
   @override
-  twitterTitle({required String twitterTitle}) {
+  twitterTitle(
+      {
+      /// Definition of [twitter:title] meta tag attribute
+      required String twitterTitle}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['twitter:title', twitterTitle]);
   }
@@ -317,7 +353,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterDescription] attribute
   /// Implement the interface
   @override
-  twitterDescription({required String twitterDescription}) {
+  twitterDescription(
+      {
+      /// Definition of [twitter:description] meta tag attribute
+      required String twitterDescription}) {
     /// Call the javascript function with needed attributes
     js.context
         .callMethod('seoNameJS', ['twitter:description', twitterDescription]);
@@ -328,7 +367,10 @@ class WebMetaSEO implements MetaSEO {
   /// Add web mata data of [twitterImage] attribute
   /// Implement the interface
   @override
-  twitterImage({required String twitterImage}) {
+  twitterImage(
+      {
+      /// Definition of [twitter:image] meta tag attribute
+      required String twitterImage}) {
     /// Call the javascript function with needed attributes
     js.context.callMethod('seoNameJS', ['twitter:image', twitterImage]);
   }

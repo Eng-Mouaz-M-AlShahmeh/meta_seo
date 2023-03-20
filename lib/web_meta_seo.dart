@@ -37,7 +37,7 @@ class WebMetaSEO implements MetaSEO {
     var meta = document.createElement('meta');
     meta.setAttribute('name', name);
     meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].prepend(meta);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
   function seoPropertyJS(property, content) {
     if(document.querySelector("[property='"+property+"']") !== null) {
@@ -46,7 +46,7 @@ class WebMetaSEO implements MetaSEO {
     var meta = document.createElement('meta');
     meta.setAttribute('property', property);
     meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].prepend(meta);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
   function seoAttributeJS(key, val) {
     if(document.querySelector("[name='"+key+"']") !== null) {
@@ -54,7 +54,7 @@ class WebMetaSEO implements MetaSEO {
     }
     var meta = document.createElement('meta');
     meta.setAttribute(key, val);
-    document.getElementsByTagName('head')[0].prepend(meta);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
   function seoOpenGraphJS(property, content) {
     if(document.querySelector("[property='"+property+"']") !== null) {
@@ -64,13 +64,13 @@ class WebMetaSEO implements MetaSEO {
     meta.setAttribute('property', property);
     meta.setAttribute('content', content);
     meta.setAttribute('data-rh', 'true');
-    document.getElementsByTagName('head')[0].prepend(meta);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
   function seoRobotsJS(name, content) {
     var meta = document.createElement('meta');
     meta.setAttribute('name', name);
     meta.setAttribute('content', content);
-    document.getElementsByTagName('head')[0].prepend(meta);
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
     """;
 

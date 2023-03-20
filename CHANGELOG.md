@@ -1,6 +1,11 @@
+## [3.0.5] - 2023/03/20
+
+* Return the core methods from prepend to appendChild to the Head of the HTML
+* Working on SSR (Server Side Rendering) for support view source page changes of the Head of the HTML  meta tags
+
 ## [3.0.4] - 2023/03/17
 
-* Fix the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) by changing the method from appendChild to prepend to the Head of the HTML
+* Changing the core methods from appendChild to prepend to the Head of the HTML
 
 ## [3.0.3] - 2023/03/17
 

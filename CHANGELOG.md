@@ -1,3 +1,16 @@
+## [3.0.6] - 2023/09/28
+
+* Update main pubspec.yaml file
+* Update main README.md file
+* Update example pubspec.yaml file
+* Update environment number
+* Update flutter_lints number to 2.0.3
+* Add lints to 2.1.1 number
+* Add screenshots logo
+* Add topics
+* Add issue_tracker
+* Working on SSR (Server Side Rendering) for server side HTML Head meta tags changes support
+
 ## [3.0.5] - 2023/03/20
 
 * Return the core methods from prepend to appendChild to the Head of the HTML

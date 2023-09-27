@@ -1,3 +1,15 @@
+<p align="center">
+<image src="https://raw.githubusercontent.com/gist/Eng-Mouaz-M-AlShahmeh/aef287fb9b7775a3758bc141dd4e8dd6/raw/7e7569a2dab96a2beaff6ac78599859cc1b78057/meta_seo_logo.svg" height="150" alt="MetaSEO Package"/>
+</p>
+
+<p align="center">
+<a href="https://pub.dev/packages/meta_seo"><img src="https://img.shields.io/pub/v/meta_seo.svg" alt="Pub"></a>
+<a href="https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo" rel="ugc"><img src="https://img.shields.io/github/stars/Eng-Mouaz-M-AlShahmeh/meta_seo.svg?style=flat&amp;logo=github&amp;colorB=deeppink&amp;label=stars" alt="Star on Github"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+</p>
+
+---
+
 # Meta Seo
 
 Flutter package for Meta SEO.
@@ -17,7 +29,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.5
+  meta_seo: ^3.0.6
 ```
 
 Second: import it to your project:
@@ -68,7 +80,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.5
+  meta_seo: ^3.0.6
   go_router: ^5.2.0 # Add the latest version
 ```
 

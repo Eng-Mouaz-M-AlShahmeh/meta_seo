@@ -1,5 +1,5 @@
 <p align="center">
-<image src="https://user-images.githubusercontent.com/86870601/271139197-22e2b260-cd48-46e9-8cc0-50601361dae4.png" width="230" alt="MetaSEO Package"/>
+<image src="https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo/assets/86870601/127e8530-5979-4ed9-b4a8-06f1b36bf49c" height="100" alt="MetaSEO Package"/>
 </p>
 
 <p align="center">

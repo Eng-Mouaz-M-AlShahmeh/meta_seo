@@ -1,5 +1,5 @@
 <p align="center">
-<image src="https://raw.githubusercontent.com/gist/Eng-Mouaz-M-AlShahmeh/aef287fb9b7775a3758bc141dd4e8dd6/raw/7e7569a2dab96a2beaff6ac78599859cc1b78057/meta_seo_logo.svg" height="100" alt="MetaSEO Package"/>
+<image src="https://raw.githubusercontent.com/gist/Eng-Mouaz-M-AlShahmeh/aef287fb9b7775a3758bc141dd4e8dd6/raw/7e7569a2dab96a2beaff6ac78599859cc1b78057/meta_seo_logo.svg" height="150" alt="MetaSEO Package"/>
 </p>
 
 <p align="center">

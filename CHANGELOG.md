@@ -1,3 +1,8 @@
+## [3.0.7] - 2023/09/28
+
+* Update main README.md file
+* Working on SSR (Server Side Rendering) for server side HTML Head meta tags changes support
+
 ## [3.0.6] - 2023/09/28
 
 * Update main pubspec.yaml file

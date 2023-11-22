@@ -187,11 +187,6 @@ Widget build(BuildContext context) {
 
 [![GitHub dependents](https://img.shields.io/github/dependents-repo/Eng-Mouaz-M-AlShahmeh/meta_seo)](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo/network/dependents)
 
-[![GitHub stars](https://img.shields.io/github/stars/Eng-Mouaz-M-AlShahmeh/meta_seo.svg?style=social&label=Star)](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo)
-[![GitHub forks](https://img.shields.io/github/forks/Eng-Mouaz-M-AlShahmeh/meta_seo.svg?style=social&label=Fork)](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo)
-[![GitHub watchers](https://img.shields.io/github/watchers/Eng-Mouaz-M-AlShahmeh/meta_seo.svg?style=social&label=Watch)](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo)
-
-
 Make sure to check out [go_router_meta_seo_example project](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
 If you find this package useful, star my example GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
 

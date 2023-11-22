@@ -183,6 +183,10 @@ Widget build(BuildContext context) {
 }
 ```
 
+## Used By
+
+[![GitHub dependents](https://img.shields.io/github/dependents-repo/Eng-Mouaz-M-AlShahmeh/meta_seo)](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo/network/dependents)
+
 Make sure to check out [go_router_meta_seo_example project](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
 If you find this package useful, star my example GitHub [repository](https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo_with_go_router_example).
 

@@ -29,7 +29,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.7
+  meta_seo: ^3.0.8
 ```
 
 Second: import it to your project:

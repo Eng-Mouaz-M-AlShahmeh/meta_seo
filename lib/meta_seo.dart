@@ -24,7 +24,10 @@ enum TwitterCard {
   app,
 
   /// or will be one of
-  player
+  player;
+
+  /// Define the [TwitterCard] constructor
+  const TwitterCard();
 }
 
 /// Define enum options for Robots Name
@@ -57,7 +60,10 @@ enum RobotsName {
   /// You can use this tag on the top-level page of your site to verify
   /// ownership for Search Console.
   /// https://developers.google.com/search/docs/crawling-indexing/special-tags
-  googleSiteVerification
+  googleSiteVerification;
+
+  /// Define the [RobotsName] constructor
+  const RobotsName();
 }
 
 /// Make it as interface to implement later on only Web platform

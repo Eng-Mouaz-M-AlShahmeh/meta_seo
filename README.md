@@ -29,7 +29,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.8
+  meta_seo: ^3.0.9
 ```
 
 Second: import it to your project:
@@ -80,7 +80,7 @@ First: Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  meta_seo: ^3.0.7
+  meta_seo: ^3.0.9
   go_router: ^5.2.0 # Add the latest version
 ```
 

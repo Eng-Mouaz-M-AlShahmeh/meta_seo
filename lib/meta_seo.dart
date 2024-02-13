@@ -1,7 +1,6 @@
 /// Copyright (c) 2022, Oct. Developed by Eng Mouaz M. Al-Shahmeh
 /// https://malshahmeh.web.app
 /// MetaSEO package
-
 /// Define our [MetaSEO] library
 library mata_seo;
 

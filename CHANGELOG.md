@@ -1,3 +1,8 @@
+## [3.0.9] - 2024/02/13
+
+* Update the documentation.
+* Working on SSR (Server Side Rendering) for server side HTML Head meta tags changes support
+
 ## [3.0.8] - 2023/11/22
 
 * Remove unnecessary flutter_lints and lints dependencies.

@@ -1,16 +1,14 @@
 /// Copyright (c) 2022, Oct. Developed by Eng Mouaz M. Al-Shahmeh
 /// https://malshahmeh.web.app
 /// MetaSEO package
+/// Adding necessary packages
+import 'dart:html';
+import 'dart:js' as js;
 
 // ignore_for_file: avoid_web_libraries_in_flutter
-
-/// Adding necessary packages
 import 'package:meta_seo/meta_seo.dart';
-import 'dart:js' as js;
-import 'dart:html';
 
 /// Code starts here
-
 class WebMetaSEO implements MetaSEO {
   /// Definition of [WebMetaSEO] instance
   WebMetaSEO();
@@ -443,5 +441,3 @@ class WebMetaSEO implements MetaSEO {
 /// If the platform is web return back the [WebMetaSEO]
 /// with implementation of the [MetaSEO] class
 MetaSEO getPlatformMeta() => WebMetaSEO();
-
-/// End of code

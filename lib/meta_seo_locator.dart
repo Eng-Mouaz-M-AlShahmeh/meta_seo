@@ -1,7 +1,3 @@
-/// Copyright (c) 2022, Oct. Developed by Eng Mouaz M. Al-Shahmeh
-/// https://malshahmeh.web.app
-/// MetaSEO package
-/// Import the class of [MetaSEO]
 import 'meta_seo.dart';
 
 /// Throw an error if the platform is not web

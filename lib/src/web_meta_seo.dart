@@ -1,7 +1,6 @@
 import 'dart:html';
 import 'dart:js' as js;
 
-// ignore_for_file: avoid_web_libraries_in_flutter
 import 'package:meta_seo/meta_seo.dart';
 
 /// Code starts here

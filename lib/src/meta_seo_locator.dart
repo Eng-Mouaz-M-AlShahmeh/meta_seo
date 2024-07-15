@@ -1,4 +1,4 @@
-import 'meta_seo.dart';
+import 'package:meta_seo/meta_seo.dart';
 
 /// Throw an error if the platform is not web
 MetaSEO getPlatformMeta() => throw UnsupportedError(

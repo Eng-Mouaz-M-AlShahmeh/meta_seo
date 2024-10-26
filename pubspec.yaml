@@ -6,10 +6,11 @@ repository: https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo
 issue_tracker: https://github.com/Eng-Mouaz-M-AlShahmeh/meta_seo/issues
 topics: [meta-seo, seo]
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 dependencies:
   flutter:
     sdk: flutter
+  web: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
